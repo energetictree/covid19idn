@@ -26,6 +26,12 @@
   unset($array['Jumlah_Kasus_Dirawat_per_Hari']);
   unset($array['FID']);
 
-  echo json_encode ($array, JSON_PRETTY_PRINT);
+
+  if (!$array) {
+    echo json_encode (array("404"=>"Data not found"), JSON_PRETTY_PRINT);
+  }
+  else {
+    echo json_encode ($array, JSON_PRETTY_PRINT);
+  }
   //print_r ($array);
 ?>
