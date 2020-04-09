@@ -17,6 +17,10 @@
     }
   }
   $array = array_shift(end($array));
+  $array =  array_slice($array, 0, 2, true) +
+          array("Negara" => "Indonesia") +
+          array_slice($array, 2, count($array) - 1, true);
+  $array['Tanggal']=date('j F Y',$array['Tanggal']/1000);
   unset($array['Hari_ke']);
   unset($array['Persentase_Pasien_dalam_Perawatan']);
   unset($array['Persentase_Pasien_Sembuh']);
