@@ -21,6 +21,13 @@
           array("Negara" => "Indonesia") +
           array_slice($array, 2, count($array) - 1, true);
   $array['Tanggal']=date('j F Y',$array['Tanggal']/1000);
+
+  foreach ( $array as $k=>$v ) {
+    if (!in_array($k, array('Tanggal','Negara','Jumlah_Kasus_Baru_per_Hari','Jumlah_Kasus_Kumulatif','Jumlah_pasien_dalam_perawatan','Jumlah_Pasien_Sembuh','Jumlah_Pasien_Meninggal'))) {
+      unset($array[$k]);
+    }
+  }
+  /*
   unset($array['Hari_ke']);
   unset($array['Persentase_Pasien_dalam_Perawatan']);
   unset($array['Persentase_Pasien_Sembuh']);
@@ -29,7 +36,7 @@
   unset($array['Jumlah_Kasus_Meninggal_per_Hari']);
   unset($array['Jumlah_Kasus_Dirawat_per_Hari']);
   unset($array['FID']);
-
+  */
 
   if (!$array) {
     echo json_encode (array("404"=>"Data not found"), JSON_PRETTY_PRINT);
@@ -37,5 +44,6 @@
   else {
     echo json_encode ($array, JSON_PRETTY_PRINT);
   }
+  
   //print_r ($array);
 ?>
