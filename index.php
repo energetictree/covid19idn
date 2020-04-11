@@ -27,16 +27,6 @@
       unset($array[$k]);
     }
   }
-  /*
-  unset($array['Hari_ke']);
-  unset($array['Persentase_Pasien_dalam_Perawatan']);
-  unset($array['Persentase_Pasien_Sembuh']);
-  unset($array['Persentase_Pasien_Meninggal']);
-  unset($array['Jumlah_Kasus_Sembuh_per_Hari']);
-  unset($array['Jumlah_Kasus_Meninggal_per_Hari']);
-  unset($array['Jumlah_Kasus_Dirawat_per_Hari']);
-  unset($array['FID']);
-  */
 
   if (!$array) {
     echo json_encode (array("404"=>"Data not found"), JSON_PRETTY_PRINT);
